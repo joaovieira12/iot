@@ -10,6 +10,7 @@ routes.get("/", (req, res) => {
 
 routes.get("/produtos", produtoController.index);
 routes.post("/produtos", produtoController.store);
+routes.put("/produtos/:id", produtoController.update);
 
 module.exports = routes;
 

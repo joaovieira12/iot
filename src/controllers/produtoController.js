@@ -16,6 +16,20 @@ class produtoController {
     }
   }
 
+  async update(req, res) {
+    const { id } = req.params;
+    const { nome, preco, quantidade } = req.body;
+
+    await Produto.update(
+      { nome, preco, quantidade },
+      { where: { id } }
+    );
+
+    return res.status(200).json({
+      mensagem: "Produto atualizado com sucesso"
+    });
+  }
+
   async destroy(req, res) {
 
         const { id } = req.params;
